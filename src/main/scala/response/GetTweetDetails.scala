@@ -3,10 +3,6 @@ package response
 import api._
 import scala.util.parsing.json._
 
-/**
- * Processes the response from the twitter api for reading the tweets on
- * github project, generates a tuple as output. 
- */
 class GetTweetDetails extends ResponseHandler[(String) => List[(String, String, String, String)]] {
 
   def processResponse(config: (String) => String) = (resp: String) => {

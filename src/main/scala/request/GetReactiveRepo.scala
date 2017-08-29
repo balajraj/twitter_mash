@@ -7,12 +7,6 @@ import api._
 import response._
 import com.typesafe.scalalogging._
 
-/**
- * The processRequest gets the detail of reactive projects from github. 
- * The processGitHubResultAndGetAuthToken will process the response from
- * the git hub and trigger the next flow in the execution which is getting
- * bearer token and tweet details. 
- */
 class GetReactiveRepo(httpWrapper: HttpWrapper) extends RequestHandler[String] with LazyLogging {
 
   val respProcessor = new GetGitHubDetails
@@ -25,11 +19,9 @@ class GetReactiveRepo(httpWrapper: HttpWrapper) extends RequestHandler[String] w
 
   def processGitHubResultAndGetAuthToken(response: String, config: (String) => String
                                          ): scala.collection.IndexedSeq[String] = {
-        
         val processRsp = respProcessor.processResponse(config)
         val repos: scala.collection.IndexedSeq[String] = processRsp(response)
         repos
-       
   }
 
 }

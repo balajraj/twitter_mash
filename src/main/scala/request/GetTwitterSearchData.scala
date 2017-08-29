@@ -7,13 +7,8 @@ import api._
 import response._
 import com.typesafe.scalalogging._
 
-/**
- * the processRequest is responsible getting the tweet details for a particular
- * git hub reactive project. 
- * processRespAndCallActor will send a message to the actor intimating a response
- * for github projects is received. 
- */
-class GetTwitterSearchData(projectName: String, bearer: String, httpWrapper: HttpWrapper) extends RequestHandler[GitTweets] with LazyLogging {
+class GetTwitterSearchData(projectName: String, bearer: String, httpWrapper: HttpWrapper) 
+      extends RequestHandler[GitTweets] with LazyLogging {
 
   val github = "github.com/"
   val bearStr = "Bearer "

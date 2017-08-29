@@ -4,10 +4,6 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Await
 import scala.concurrent.duration._
 
-/**
- * The class exists due to the reason it makes mocking 
- * http request easier in the unit test cases. 
- */
 class HttpWrapper {
   
   def sendRequest(finalReq: Req,count:Int): String = {

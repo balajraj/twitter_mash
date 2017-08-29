@@ -3,9 +3,6 @@ package response
 import scala.util.parsing.json._
 import api._
 
-/**
- * Processes the bearer token response from twitter
- */
 class ParseAccessTokenResponse extends ResponseHandler[(String) => String] {
 
   def processResponse(config: (String) => String) = (resp: String) => {

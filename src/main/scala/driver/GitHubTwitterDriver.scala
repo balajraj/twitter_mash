@@ -4,27 +4,12 @@ import scala.util.{ Success, Failure }
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration._
 import scala.concurrent._
-//import akka.actor.Actor
-//import akka.actor.ActorSystem
-//import akka.actor.Props
 import com.typesafe.scalalogging._
 import java.io.PrintWriter
 
 import config._
-//import actor._
 import request._
 
-/**
- * The Driver is the entry point into the system and will be responsible for 
- * triggering the chain of flow of events which will generate the output
- * 
- * Since the project uses async http for request processing the stopmain variable will
- * be set from the actor after all the responses are received to terminate the
- * main thread of execution, if the main thread is not made to wait it will exit prematurely
- * since all http request execute in a async manner. 
- * 
- * Please make sure the config_file env variable is the location of config file
- */
 object GitHubTwitterDriver extends LazyLogging {
  
   def sendOutRequests(file: String): Unit = {

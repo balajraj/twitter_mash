@@ -1,6 +1,5 @@
 package api
 
-//import akka.actor.ActorRef
 
 /**
  * All the response handling class will implement this trait

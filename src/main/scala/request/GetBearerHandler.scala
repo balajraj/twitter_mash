@@ -12,12 +12,8 @@ import com.typesafe.scalalogging._
 case class GitTweets(tweets: List[(String, String, String, String)],
                      projectName: String)
                      
-/**
- * The processRequest is responsible for getting oauth token from twitter
- * In processRespAndCallTwitterSearch it is important to note that multiple
- * http request are triggered in parallel to get tweets details for various projects
- */
-class GetBearerHandler(repos: scala.collection.IndexedSeq[String], httpWrapper: HttpWrapper) extends RequestHandler[String] with LazyLogging {
+class GetBearerHandler(repos: scala.collection.IndexedSeq[String], httpWrapper: HttpWrapper) 
+       extends RequestHandler[String] with LazyLogging {
   val accessHandler = new ParseAccessTokenResponse
   val rspP = new GetTweetDetails
   
