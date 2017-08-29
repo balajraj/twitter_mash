@@ -1,7 +1,7 @@
 # The github twitter command line api mash project.
 
 ### Introduction
-The GitHubTwitterDriver has the main method which initiates the whole flow for this project.The driver reads a config file from the env variable config_file. So before running the project using sbt run  please set the below environment variable as shown as follows assuming that you are using a mac or linux environment to run the code.
+ In this project the github public api is queried with search string "reactive" and  limited subset of the those reactive projects, tweets are queried from the twitter public api and the output is saved in json format. The GitHubTwitterDriver has the main method which initiates the whole flow for this project.The driver reads a config file from the env variable config_file. So before running the project using sbt run  please set the below environment variable as shown as follows assuming that you are using a mac or linux environment to run the code.
 
 ```sh
 export config_file=src/main/resources/config.properties
