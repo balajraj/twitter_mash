@@ -5,7 +5,6 @@ import scala.util.{ Success, Failure }
 import akka.actor.ActorRef
 import api._
 import response._
-import actor._
 import com.typesafe.scalalogging._
 
 /**
